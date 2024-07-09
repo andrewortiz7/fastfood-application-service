@@ -1,22 +1,35 @@
 package com.fastfood.application.service.restaurant.service.domain.entity;
 
+import com.fastfood.application.service.domain.entity.BaseEntity;
+import com.fastfood.application.service.domain.valueobject.BaseId;
 import com.fastfood.application.service.restaurant.service.domain.valueobject.DishId;
 
 import java.util.List;
 import java.util.UUID;
 
-public class Dish {
+public class Dish extends BaseEntity<DishId> {
 
-    private DishId id;
-    private String name;
-    private List<String> ingredients;
-    private Double totalPrice;
+    private final String name;
+    private final List<String> ingredients;
+    private final Double totalPrice;
 
     private Dish(Builder builder) {
-        id = builder.id;
+        super.setId(builder.dishId);
         name = builder.name;
         ingredients = builder.ingredients;
         totalPrice = builder.totalPrice;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
     public static Builder builder() {
@@ -25,7 +38,7 @@ public class Dish {
 
 
     public static final class Builder {
-        private DishId id;
+        private DishId dishId;
         private String name;
         private List<String> ingredients;
         private Double totalPrice;
@@ -34,7 +47,7 @@ public class Dish {
         }
 
         public Builder id(DishId val) {
-            id = val;
+            dishId = val;
             return this;
         }
 

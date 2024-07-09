@@ -11,9 +11,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>common</module>
-    </modules>
-    <modules>
         <module>restaurant-service</module>
     </modules>
-
 </project>

@@ -1,6 +1,8 @@
 package com.fastfood.application.service.restaurant.service.domain.exception;
 
-public class RestaurantDomainException extends RuntimeException{
+import com.fastfood.application.service.domain.exception.DomainException;
+
+public class RestaurantDomainException extends DomainException {
     public RestaurantDomainException(String message) {
         super(message);
     }
