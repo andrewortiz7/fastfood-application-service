@@ -14,6 +14,7 @@
         <module>restaurant-infrastructure</module>
         <module>restaurant-presentation</module>
         <module>restaurant-domain</module>
+        <module>restaurant-test</module>
     </modules>
 
     <artifactId>restaurant-service</artifactId>
