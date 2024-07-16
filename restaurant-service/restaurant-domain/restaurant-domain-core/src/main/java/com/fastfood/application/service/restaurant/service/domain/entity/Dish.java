@@ -10,44 +10,44 @@ import java.util.UUID;
 public class Dish extends BaseEntity<DishId> {
 
     private final String name;
-    private final List<String> ingredients;
-    private final Double totalPrice;
+    private final List<Ingredient> availableIngredients;
+    private final Double basePrice;
 
     private Dish(Builder builder) {
-        super.setId(builder.dishId);
+        super.setId(builder.id);
         name = builder.name;
-        ingredients = builder.ingredients;
-        totalPrice = builder.totalPrice;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public Double getTotalPrice() {
-        return totalPrice;
+        availableIngredients = builder.availableIngredients;
+        basePrice = builder.basePrice;
     }
 
     public static Builder builder() {
         return new Builder();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<Ingredient> getAvailableIngredients() {
+        return availableIngredients;
+    }
+
+    public Double getBasePrice() {
+        return basePrice;
+    }
+
 
     public static final class Builder {
-        private DishId dishId;
+        private DishId id;
         private String name;
-        private List<String> ingredients;
-        private Double totalPrice;
+        private List<Ingredient> availableIngredients;
+        private Double basePrice;
 
         private Builder() {
         }
 
         public Builder id(DishId val) {
-            dishId = val;
+            id = val;
             return this;
         }
 
@@ -56,13 +56,13 @@ public class Dish extends BaseEntity<DishId> {
             return this;
         }
 
-        public Builder ingredients(List<String> val) {
-            ingredients = val;
+        public Builder availableIngredients(List<Ingredient> val) {
+            availableIngredients = val;
             return this;
         }
 
-        public Builder totalPrice(Double val) {
-            totalPrice = val;
+        public Builder basePrice(Double val) {
+            basePrice = val;
             return this;
         }
 
